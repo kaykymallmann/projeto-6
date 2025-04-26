@@ -1,26 +1,24 @@
-
-# Projeto 6: Banco Simples
 clientes = {}
 
 def criar():
-    n = input("Nome: ")
-    clientes[n] = 0
+    nome = input("Nome: ")
+    clientes[nome] = 0
 
 def depositar():
-    n = input("Nome: ")
-    v = float(input("Valor: "))
-    if n in clientes:
-        clientes[n] += v
+    nome = input("Nome: ")
+    valor = float(input("Valor: "))
+    if nome in clientes:
+        clientes[nome] += valor
         print("Depositado")
     else:
         print("Cliente não existe")
 
 def sacar():
-    n = input("Nome: ")
-    v = float(input("Valor: "))
-    if n in clientes:
-        if clientes[n] >= v:
-            clientes[n] -= v
+    nome = input("Nome: ")
+    valor = float(input("Valor: "))
+    if nome in clientes:
+        if clientes[nome] >= valor:
+            clientes[nome] -= valor
             print("Sacado")
         else:
             print("Saldo insuficiente")
@@ -28,19 +26,19 @@ def sacar():
         print("Cliente não existe")
 
 def saldo():
-    for k in clientes:
-        print(k, "->", clientes[k])
+    for cliente in clientes:
+        print(cliente, "->", clientes[cliente])
 
 while True:
     print("1-Criar 2-Depositar 3-Sacar 4-Saldo 5-Sair")
-    o = input("Opção: ")
-    if o == "1":
+    opcao = input("Opção: ")
+    if opcao == "1":
         criar()
-    elif o == "2":
+    elif opcao == "2":
         depositar()
-    elif o == "3":
+    elif opcao == "3":
         sacar()
-    elif o == "4":
+    elif opcao == "4":
         saldo()
-    elif o == "5":
+    elif opcao == "5":
         break
